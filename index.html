@@ -883,6 +883,11 @@
       			const componentB = document.getElementById("component-b");
       			const componentC = document.getElementById("component-c");
       			
+      			// Biến kiểm tra trạng thái của các dropdown
+      			let isClassActive = false;
+      			let isErasActive = false;
+      			let isTierActive = false;
+      			
       			// Hàm để reset tất cả nút về trạng thái ban đầu
       			function resetAllButtons() {
         				// Reset màu nền về màu gốc
@@ -894,42 +899,87 @@
         				classBtn.querySelector('.class').style.color = "#99a1c2";
         				erasBtn.querySelector('.eras-text').style.color = "#99a1c2";
         				tierBtn.querySelector('.tier-text').style.color = "#99a1c2";
+        				
+        				// Reset màu icon về màu gốc
+        				classBtn.querySelector('.frame-icon').style.filter = "none";
+        				erasBtn.querySelector('.frame-icon').style.filter = "none";
+        				tierBtn.querySelector('.frame-icon').style.filter = "none";
+      			}
+      			
+      			// Hàm ẩn tất cả dropdown
+      			function hideAllDropdowns() {
+        				componentA.style.display = "none";
+        				componentB.style.display = "none";
+        				componentC.style.display = "none";
+        				isClassActive = false;
+        				isErasActive = false;
+        				isTierActive = false;
       			}
       			
       			classBtn.addEventListener("click", function() {
-        				resetAllButtons();
-        				componentA.style.display = "none";
-        				componentB.style.display = "none";
-        				componentC.style.display = "block";
-        				
-        				// Thay đổi màu nền của nút Class thành màu giống dropdown (#484e84)
-        				this.querySelector('.frame-child').style.backgroundColor = "#484e84";
-        				// Thay đổi màu text thành xanh
-        				this.querySelector('.class').style.color = "#66d5ff";
+        				if (isClassActive) {
+          					// Nếu Class đang active, ẩn dropdown và reset nút
+          					hideAllDropdowns();
+          					resetAllButtons();
+        				} else {
+          					// Nếu Class chưa active, hiển thị dropdown và style nút
+          					hideAllDropdowns(); // Ẩn tất cả dropdown khác trước
+          					resetAllButtons();
+          					
+          					componentC.style.display = "block";
+          					isClassActive = true;
+          					
+          					// Thay đổi màu nền của nút Class
+          					this.querySelector('.frame-child').style.backgroundColor = "#484e84";
+          					// Thay đổi màu text
+          					this.querySelector('.class').style.color = "#66d5ff";
+          					// Đổi màu icon
+          					this.querySelector('.frame-icon').style.filter = "brightness(0) saturate(100%) invert(77%) sepia(40%) saturate(1304%) hue-rotate(164deg) brightness(100%) contrast(101%)";
+        				}
       			});
       			
       			erasBtn.addEventListener("click", function() {
-        				resetAllButtons();
-        				componentA.style.display = "none";
-        				componentB.style.display = "block";
-        				componentC.style.display = "none";
-        				
-        				// Thay đổi màu nền của nút Eras thành màu giống dropdown
-        				this.querySelector('.frame-child').style.backgroundColor = "#484e84";
-        				// Thay đổi màu text thành xanh
-        				this.querySelector('.eras-text').style.color = "#66d5ff";
+        				if (isErasActive) {
+          					// Nếu Eras đang active, ẩn dropdown và reset nút
+          					hideAllDropdowns();
+          					resetAllButtons();
+        				} else {
+          					// Nếu Eras chưa active, hiển thị dropdown và style nút
+          					hideAllDropdowns(); // Ẩn tất cả dropdown khác trước
+          					resetAllButtons();
+          					
+          					componentB.style.display = "block";
+          					isErasActive = true;
+          					
+          					// Thay đổi màu nền của nút Eras
+          					this.querySelector('.frame-child').style.backgroundColor = "#484e84";
+          					// Thay đổi màu text
+          					this.querySelector('.eras-text').style.color = "#66d5ff";
+          					// Đổi màu icon
+          					this.querySelector('.frame-icon').style.filter = "brightness(0) saturate(100%) invert(77%) sepia(40%) saturate(1304%) hue-rotate(164deg) brightness(100%) contrast(101%)";
+        				}
       			});
       			
       			tierBtn.addEventListener("click", function() {
-        				resetAllButtons();
-        				componentA.style.display = "block";
-        				componentB.style.display = "none";
-        				componentC.style.display = "none";
-        				
-        				// Thay đổi màu nền của nút Tier thành màu giống dropdown
-        				this.querySelector('.frame-child').style.backgroundColor = "#484e84";
-        				// Thay đổi màu text thành xanh
-        				this.querySelector('.tier-text').style.color = "#66d5ff";
+        				if (isTierActive) {
+          					// Nếu Tier đang active, ẩn dropdown và reset nút
+          					hideAllDropdowns();
+          					resetAllButtons();
+        				} else {
+          					// Nếu Tier chưa active, hiển thị dropdown và style nút
+          					hideAllDropdowns(); // Ẩn tất cả dropdown khác trước
+          					resetAllButtons();
+          					
+          					componentA.style.display = "block";
+          					isTierActive = true;
+          					
+          					// Thay đổi màu nền của nút Tier
+          					this.querySelector('.frame-child').style.backgroundColor = "#484e84";
+          					// Thay đổi màu text
+          					this.querySelector('.tier-text').style.color = "#66d5ff";
+          					// Đổi màu icon
+          					this.querySelector('.frame-icon').style.filter = "brightness(0) saturate(100%) invert(77%) sepia(40%) saturate(1304%) hue-rotate(164deg) brightness(100%) contrast(101%)";
+        				}
       			});
     		});
   	</script>
