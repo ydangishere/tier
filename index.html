@@ -1,0 +1,937 @@
+<!DOCTYPE html>
+<html>
+<head>
+  	<meta charset="utf-8">
+  	<meta name="viewport" content="initial-scale=1, width=device-width">
+  	
+  	<style>
+.frame-child {
+  width: 100%;
+  position: relative;
+  border-radius: 12px;
+  background-color: #33385f;
+  height: 30px;
+}
+
+.frame-icon {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 18px;
+  height: 18px;
+  overflow: hidden;
+}
+
+.class {
+  position: absolute;
+  top: 0.2px;
+  left: 22px;
+  line-height: 18px;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: #99a1c2;
+}
+
+.eras-text {
+  position: absolute;
+  top: 0.2px;
+  left: 22px;
+  line-height: 18px;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: #99a1c2;
+}
+
+.tier-text {
+  position: absolute;
+  top: 0.2px;
+  left: 22px;
+  line-height: 18px;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: #99a1c2;
+}
+
+.group-container {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 59px;
+  height: 18.2px;
+}
+
+.group-wrapper {
+  position: absolute;
+  top: 6px;
+  left: 25px;
+  width: 59px;
+  height: 18.2px;
+}
+
+.rectangle-parent {
+  position: relative;
+  width: 110px;
+  height: 30px;
+  cursor: pointer;
+}
+
+.group-div {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 51px;
+  height: 18.2px;
+}
+
+.group-frame {
+  position: absolute;
+  top: 6px;
+  left: 29px;
+  width: 51px;
+  height: 18.2px;
+}
+
+.rectangle-group {
+  position: relative;
+  width: 110px;
+  height: 30px;
+  cursor: pointer;
+}
+
+.frame-parent1 {
+  position: absolute;
+  top: 6px;
+  left: 32px;
+  width: 45px;
+  height: 18.2px;
+}
+
+.rectangle-container {
+  position: relative;
+  width: 110px;
+  height: 30px;
+  cursor: pointer;
+}
+
+.frame-parent {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 10px;
+  font-family: Poppins;
+  font-size: 12px;
+}
+
+/* Component A (Tier) */
+.component-a {
+  margin-top: 2px;
+  display: none;
+  width: 350px;
+}
+.group-child {
+  	position: absolute;
+  	top: 0px;
+  	left: 0px;
+  	border-radius: 50%;
+  	background-color: #66d5ff;
+  	width: 28px;
+  	height: 28px;
+}
+.invasionreward-medal-gold1-icon {
+  	position: absolute;
+  	top: 5px;
+  	left: 5px;
+  	width: 18px;
+  	height: 18px;
+  	object-fit: cover;
+}
+.ellipse-parent {
+  	position: absolute;
+  	top: 10px;
+  	left: 8px;
+  	width: 28px;
+  	height: 28px;
+}
+.splus {
+  	position: absolute;
+  	top: 13.5px;
+  	left: 46px;
+  	line-height: 21px;
+  	color: #b1b6e0;
+}
+.menuitem {
+  	position: absolute;
+  	width: 100%;
+  	top: 0px;
+  	right: 0px;
+  	left: 0px;
+  	border-radius: var(--br-xs);
+  	height: 48px;
+}
+.group-item {
+  	position: absolute;
+  	top: 0px;
+  	left: 0px;
+  	border-radius: 50%;
+  	background-color: #ff6678;
+  	width: 28px;
+  	height: 28px;
+}
+.menuitem1 {
+  	position: absolute;
+  	width: 100%;
+  	top: 48px;
+  	right: 0px;
+  	left: 0px;
+  	border-radius: var(--br-xs);
+  	height: 48px;
+}
+.group-inner {
+  	position: absolute;
+  	top: 0px;
+  	left: 0px;
+  	border-radius: 50%;
+  	background-color: #82ffdc;
+  	width: 28px;
+  	height: 28px;
+}
+.menuitem2 {
+  	position: absolute;
+  	width: 100%;
+  	top: 336px;
+  	right: 0px;
+  	left: 0px;
+  	border-radius: var(--br-xs);
+  	height: 48px;
+}
+.menuitem3 {
+  	position: absolute;
+  	width: 100%;
+  	top: 96px;
+  	right: 0px;
+  	left: 0px;
+  	border-radius: var(--br-xs);
+  	height: 48px;
+}
+.ellipse-div {
+  	position: absolute;
+  	top: 0px;
+  	left: 0px;
+  	border-radius: 50%;
+  	background-color: #d896ff;
+  	width: 28px;
+  	height: 28px;
+}
+.icon-weakness-1 {
+  	position: absolute;
+  	top: 6px;
+  	left: 6px;
+  	width: 16px;
+  	height: 17px;
+  	object-fit: cover;
+}
+.menuitem4 {
+  	position: absolute;
+  	width: 100%;
+  	top: 144px;
+  	right: 0px;
+  	left: 0px;
+  	border-radius: var(--br-xs);
+  	height: 48px;
+}
+.group-child1 {
+  	position: absolute;
+  	top: 0px;
+  	left: 0px;
+  	border-radius: 50%;
+  	background-color: #a6acdc;
+  	width: 28px;
+  	height: 28px;
+}
+.badgealert-1-icon {
+  	position: absolute;
+  	top: 6px;
+  	left: 6px;
+  	width: 16px;
+  	height: 16px;
+  	object-fit: cover;
+}
+.menuitem5 {
+  	position: absolute;
+  	width: 100%;
+  	top: 192px;
+  	right: 0px;
+  	left: 0px;
+  	border-radius: var(--br-xs);
+  	height: 48px;
+}
+.separator {
+  	position: absolute;
+  	width: calc(100% - 16px);
+  	top: 256px;
+  	right: 8px;
+  	left: 8px;
+  	background-color: #b4bae9;
+  	height: 1px;
+}
+.menuitem-all {
+  	position: absolute;
+  	top: 276.5px;
+  	left: 8px;
+  	line-height: 21px;
+  	color: #b1b6e0;
+}
+.container {
+  	position: absolute;
+  	width: 100%;
+  	top: 0px;
+  	right: 0px;
+  	left: 0px;
+  	height: 315px;
+  	overflow: auto;
+}
+.container-wrapper {
+  	position: absolute;
+  	width: calc(100% - 8px);
+  	top: 0px;
+  	right: 4px;
+  	left: 4px;
+  	height: 315px;
+}
+.a-tier {
+  	width: 100%;
+  	position: relative;
+  	box-shadow: 0px 4px 6px -1px rgba(0, 0, 0, 0.1), 0px 2px 4px -2px rgba(0, 0, 0, 0.1);
+  	border-radius: var(--br-xs);
+  	background-color: #484e84;
+  	height: 315px;
+  	overflow: hidden;
+  	text-align: left;
+  	font-size: var(--font-size-sm);
+  	color: var(--color-lavender);
+  	font-family: var(--font-poppins);
+}
+
+/* Component B (Eras) */
+.component-b {
+  margin-top: 2px;
+  display: none;
+  width: 350px;
+}
+.attitude-icon {
+  	position: absolute;
+  	top: calc(50% - 14px);
+  	left: 8px;
+  	width: 28px;
+  	height: 28px;
+  	overflow: hidden;
+  	object-fit: cover;
+}
+.attitude {
+  	position: absolute;
+  	top: 13.5px;
+  	left: 46px;
+  	line-height: 21px;
+  	text-transform: capitalize;
+  	display: flex;
+  	align-items: center;
+  	width: 55.7px;
+  	height: 20px;
+}
+.legends {
+  	position: absolute;
+  	top: 13.5px;
+  	left: 46px;
+  	line-height: 21px;
+  	text-transform: capitalize;
+  	display: flex;
+  	align-items: center;
+  	width: 59.1px;
+  	height: 20px;
+}
+.menuitem1 {
+  	position: absolute;
+  	width: 100%;
+  	top: 48px;
+  	right: 0px;
+  	left: 0px;
+  	border-radius: var(--br-xs);
+  	height: 48px;
+}
+.modern {
+  	position: absolute;
+  	top: 13.5px;
+  	left: 46px;
+  	line-height: 21px;
+  	text-transform: capitalize;
+  	display: flex;
+  	align-items: center;
+  	width: 53.8px;
+  	height: 20px;
+}
+.pg {
+  	position: absolute;
+  	top: 13.5px;
+  	left: 46px;
+  	line-height: 21px;
+  	text-transform: capitalize;
+  	display: flex;
+  	align-items: center;
+  	width: 17.7px;
+  	height: 20px;
+}
+.menuitem3 {
+  	position: absolute;
+  	width: 100%;
+  	top: 96px;
+  	right: 0px;
+  	left: 0px;
+  	border-radius: var(--br-xs);
+  	height: 48px;
+}
+.new-generation {
+  	position: absolute;
+  	top: 13.5px;
+  	left: 46px;
+  	line-height: 21px;
+  	text-transform: capitalize;
+  	display: flex;
+  	align-items: center;
+  	width: 112.8px;
+  	height: 20px;
+}
+.menuitem4 {
+  	position: absolute;
+  	width: 100%;
+  	top: 144px;
+  	right: 0px;
+  	left: 0px;
+  	border-radius: var(--br-xs);
+  	height: 48px;
+}
+.ruthless-aggression {
+  	position: absolute;
+  	top: 13.5px;
+  	left: 46px;
+  	line-height: 21px;
+  	text-transform: capitalize;
+  	display: flex;
+  	align-items: center;
+  	width: 140.3px;
+  	height: 20px;
+}
+.menuitem5 {
+  	position: absolute;
+  	width: 100%;
+  	top: 192px;
+  	right: 0px;
+  	left: 0px;
+  	border-radius: var(--br-xs);
+  	height: 48px;
+}
+.menuitem6 {
+  	position: absolute;
+  	width: 100%;
+  	top: 240px;
+  	right: 0px;
+  	left: 0px;
+  	border-radius: var(--br-xs);
+  	height: 48px;
+}
+.hall-of-fame {
+  	position: absolute;
+  	top: 13.5px;
+  	left: 46px;
+  	line-height: 21px;
+  	text-transform: capitalize;
+  	display: flex;
+  	align-items: center;
+  	width: 88.8px;
+  	height: 20px;
+}
+.menuitem7 {
+  	position: absolute;
+  	width: 100%;
+  	top: 288px;
+  	right: 0px;
+  	left: 0px;
+  	border-radius: var(--br-xs);
+  	height: 48px;
+}
+.separator-parent {
+  	position: absolute;
+  	width: calc(100% - 16px);
+  	top: 336px;
+  	right: 8px;
+  	left: 8px;
+  	height: 41.5px;
+  	color: #b1b6e0;
+}
+.container {
+  	position: absolute;
+  	width: 100%;
+  	top: 0px;
+  	right: 0px;
+  	left: 0px;
+  	height: 380px;
+  	overflow: visible;
+}
+.container-wrapper {
+  	position: absolute;
+  	width: calc(100% - 8px);
+  	top: 0px;
+  	right: 4px;
+  	left: 4px;
+  	height: 380px;
+}
+.b-eras {
+  	width: 100%;
+  	position: relative;
+  	box-shadow: 0px 4px 6px -1px rgba(0, 0, 0, 0.1), 0px 2px 4px -2px rgba(0, 0, 0, 0.1);
+  	border-radius: var(--br-xs);
+  	background-color: #484e84;
+  	height: 450px;
+  	overflow: visible;
+  	text-align: left;
+  	font-size: var(--font-size-sm);
+  	color: var(--color-lavender);
+  	font-family: var(--font-poppins);
+}
+
+.component-b .container {
+  	overflow: visible;
+  	height: 450px;
+}
+
+.container-wrapper {
+  	position: absolute;
+  	width: calc(100% - 8px);
+  	top: 0px;
+  	right: 4px;
+  	left: 4px;
+  	height: 450px;
+}
+
+/* Component C (Class) */
+.component-c {
+  margin-top: 2px;
+  display: none;
+  width: 350px;
+}
+.showboats-icon {
+  	position: absolute;
+  	top: 10px;
+  	left: 8px;
+  	width: 28px;
+  	height: 28px;
+  	overflow: hidden;
+  	object-fit: cover;
+}
+.splus {
+  	position: absolute;
+  	top: 13.5px;
+  	left: 46px;
+  	line-height: 21px;
+  	text-transform: capitalize;
+}
+.menuitem {
+  	position: absolute;
+  	width: calc(100% - 8px);
+  	top: 0px;
+  	right: 4px;
+  	left: 4px;
+  	border-radius: var(--br-xs);
+  	height: 48px;
+}
+.menuitem1 {
+  	position: absolute;
+  	width: calc(100% - 8px);
+  	top: 48px;
+  	right: 4px;
+  	left: 4px;
+  	border-radius: var(--br-xs);
+  	height: 48px;
+}
+.strikers-icon {
+  	position: absolute;
+  	top: calc(50% - 14px);
+  	left: 8px;
+  	width: 28px;
+  	height: 28px;
+  	overflow: hidden;
+  	object-fit: cover;
+}
+.strikers {
+  	position: absolute;
+  	top: 13.5px;
+  	left: 46px;
+  	line-height: 21px;
+  	text-transform: capitalize;
+  	display: flex;
+  	align-items: center;
+  	width: 50.5px;
+  	height: 20px;
+}
+.menuitem2 {
+  	position: absolute;
+  	width: calc(100% - 8px);
+  	top: 240px;
+  	right: 4px;
+  	left: 4px;
+  	border-radius: var(--br-xs);
+  	height: 48px;
+}
+.powerhouses {
+  	position: absolute;
+  	top: 13.5px;
+  	left: 46px;
+  	line-height: 21px;
+  	text-transform: capitalize;
+  	display: flex;
+  	align-items: center;
+  	width: 93.3px;
+  	height: 20px;
+}
+.menuitem3 {
+  	position: absolute;
+  	width: calc(100% - 8px);
+  	top: 96px;
+  	right: 4px;
+  	left: 4px;
+  	border-radius: var(--br-xs);
+  	height: 48px;
+}
+.technicians {
+  	position: absolute;
+  	top: 13.5px;
+  	left: 46px;
+  	line-height: 21px;
+  	text-transform: capitalize;
+  	display: flex;
+  	align-items: center;
+  	width: 84.1px;
+  	height: 20px;
+}
+.menuitem4 {
+  	position: absolute;
+  	width: calc(100% - 8px);
+  	top: 144px;
+  	right: 4px;
+  	left: 4px;
+  	border-radius: var(--br-xs);
+  	height: 48px;
+}
+.tricksters {
+  	position: absolute;
+  	top: 13.5px;
+  	left: 46px;
+  	line-height: 21px;
+  	text-transform: capitalize;
+  	display: flex;
+  	align-items: center;
+  	width: 65.7px;
+  	height: 20px;
+}
+.menuitem5 {
+  	position: absolute;
+  	width: calc(100% - 8px);
+  	top: 192px;
+  	right: 4px;
+  	left: 4px;
+  	border-radius: var(--br-xs);
+  	height: 48px;
+}
+.container {
+  	position: absolute;
+  	width: 100%;
+  	top: 0px;
+  	right: 0px;
+  	left: 0px;
+  	height: 315px;
+  	overflow: auto;
+}
+.container-wrapper {
+  	position: absolute;
+  	width: calc(100% - 8px);
+  	top: 0px;
+  	right: 4px;
+  	left: 4px;
+  	height: 315px;
+}
+.separator {
+  	position: absolute;
+  	width: calc(100% - 24px);
+  	top: 312px;
+  	right: 12px;
+  	left: 12px;
+  	background-color: #b4bae9;
+  	height: 1px;
+}
+.menuitem-all {
+  	position: absolute;
+  	top: 332.5px;
+  	left: 12px;
+  	line-height: 21px;
+  	color: #b1b6e0;
+}
+.c-class {
+  	width: 100%;
+  	position: relative;
+  	box-shadow: 0px 4px 6px -1px rgba(0, 0, 0, 0.1), 0px 2px 4px -2px rgba(0, 0, 0, 0.1);
+  	border-radius: var(--br-xs);
+  	background-color: #484e84;
+  	height: 371px;
+  	overflow: hidden;
+  	text-align: left;
+  	font-size: var(--font-size-sm);
+  	color: var(--color-lavender);
+  	font-family: var(--font-poppins);
+}
+
+:root {
+  --br-xs: 12px;
+  --color-lavender: #d2d7f9;
+  --font-size-sm: 14px;
+}
+  	</style>
+  	
+  	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@1,700&display=swap" />
+</head>
+<body>
+  	
+  	<div class="frame-parent">
+    		<div class="rectangle-parent" id="class-btn">
+      			<div class="frame-child">
+      			</div>
+      			<div class="group-wrapper">
+        				<div class="group-container">
+          					<div class="group-container">
+            						<img class="frame-icon" alt="" src="icon.svg">
+            						
+            						<i class="class">Class</i>
+          					</div>
+        				</div>
+      			</div>
+    		</div>
+    		<div class="rectangle-group" id="eras-btn">
+      			<div class="frame-child">
+      			</div>
+      			<div class="group-frame">
+        				<div class="group-div">
+          					<div class="group-div">
+            						<div class="group-div">
+              							<img class="frame-icon" alt="" src="icon.svg">
+              							
+              							<i class="eras-text">eras</i>
+            						</div>
+          					</div>
+        				</div>
+      			</div>
+    		</div>
+    		<div class="rectangle-container" id="tier-btn">
+      			<div class="frame-child">
+      			</div>
+      			<div class="frame-parent1">
+        				<img class="frame-icon" alt="" src="icon.svg">
+        				
+        				<i class="tier-text">tier</i>
+      			</div>
+    		</div>
+  	</div>
+  	
+  	<!-- Component A (Tier) -->
+  	<div class="component-a" id="component-a">
+    		<div class="a-tier">
+      			<div class="container-wrapper">
+        				<div class="container">
+          					<div class="menuitem">
+            						<div class="ellipse-parent">
+              							<div class="group-child"></div>
+              							<img class="invasionreward-medal-gold1-icon" alt="" src="InvasionReward_Medal_Gold1.png" />
+            						</div>
+            						<div class="splus">SPlus</div>
+          					</div>
+          					<div class="menuitem1">
+            						<div class="ellipse-parent">
+              							<div class="group-item"></div>
+              							<img class="invasionreward-medal-gold1-icon" alt="" src="InvasionReward_Medal_Gold1.png" />
+            						</div>
+            						<div class="splus">S-Tier</div>
+          					</div>
+          					<div class="menuitem2">
+            						<div class="ellipse-parent">
+              							<div class="group-inner"></div>
+              							<img class="invasionreward-medal-gold1-icon" alt="" src="InvasionReward_Medal_Gold1.png" />
+            						</div>
+            						<div class="splus">A-Tier</div>
+          					</div>
+          					<div class="menuitem3">
+            						<div class="ellipse-parent">
+              							<div class="ellipse-div"></div>
+              							<img class="icon-weakness-1" alt="" src="Icon_Weakness-1.png" />
+            						</div>
+            						<div class="splus">B-Tier</div>
+          					</div>
+          					<div class="menuitem4">
+            						<div class="ellipse-parent">
+              							<div class="group-child1"></div>
+              							<img class="badgealert-1-icon" alt="" src="BadgeAlert-1.png" />
+            						</div>
+            						<div class="splus">C-Tier</div>
+          					</div>
+          					<div class="separator"></div>
+          					<div class="menuitem-all">All Tiers</div>
+        				</div>
+      			</div>
+    		</div>
+  	</div>
+  	
+  	<!-- Component B (Eras) -->
+  	<div class="component-b" id="component-b">
+    		<div class="b-eras">
+      			<div class="container-wrapper">
+        				<div class="container" style="position: relative;">
+          					<div style="position: relative; width: 100%; height: 48px; margin-bottom: 0px;">
+            						<img class="attitude-icon" alt="" src="attitude.png" style="position: absolute; top: 10px; left: 8px; width: 28px; height: 28px;" />
+            						<div style="position: absolute; top: 13.5px; left: 46px; line-height: 21px;">Attitude</div>
+          					</div>
+          					<div style="position: relative; width: 100%; height: 48px; margin-bottom: 0px;">
+            						<img class="attitude-icon" alt="" src="legends.png" style="position: absolute; top: 10px; left: 8px; width: 28px; height: 28px;" />
+            						<div style="position: absolute; top: 13.5px; left: 46px; line-height: 21px;">Legends</div>
+          					</div>
+          					<div style="position: relative; width: 100%; height: 48px; margin-bottom: 0px;">
+            						<img class="attitude-icon" alt="" src="pg.png" style="position: absolute; top: 10px; left: 8px; width: 28px; height: 28px;" />
+            						<div style="position: absolute; top: 13.5px; left: 46px; line-height: 21px;">PG</div>
+          					</div>
+          					<div style="position: relative; width: 100%; height: 48px; margin-bottom: 0px;">
+            						<img class="attitude-icon" alt="" src="newgen.png" style="position: absolute; top: 10px; left: 8px; width: 28px; height: 28px;" />
+            						<div style="position: absolute; top: 13.5px; left: 46px; line-height: 21px;">New Generation</div>
+          					</div>
+          					<div style="position: relative; width: 100%; height: 48px; margin-bottom: 0px;">
+            						<img class="attitude-icon" alt="" src="ruthless.png" style="position: absolute; top: 10px; left: 8px; width: 28px; height: 28px;" />
+            						<div style="position: absolute; top: 13.5px; left: 46px; line-height: 21px;">Ruthless Aggression</div>
+          					</div>
+          					<div style="position: relative; width: 100%; height: 48px; margin-bottom: 0px;">
+            						<img class="attitude-icon" alt="" src="modern.png" style="position: absolute; top: 10px; left: 8px; width: 28px; height: 28px;" />
+            						<div style="position: absolute; top: 13.5px; left: 46px; line-height: 21px;">Modern</div>
+          					</div>
+          					<div style="position: relative; width: 100%; height: 48px; margin-bottom: 0px;">
+            						<img class="attitude-icon" alt="" src="hall.png" style="position: absolute; top: 10px; left: 8px; width: 28px; height: 28px;" />
+            						<div style="position: absolute; top: 13.5px; left: 46px; line-height: 21px;">Hall Of Fame</div>
+          					</div>
+                    <div style="position: relative; width: 100%; height: 48px; margin-bottom: 0px;">
+                      <img class="attitude-icon" alt="" src="reality.png" style="position: absolute; top: 10px; left: 8px; width: 28px; height: 28px;" />
+                      <div style="position: absolute; top: 13.5px; left: 46px; line-height: 21px;">Reality</div>
+                    </div>
+                    
+                    <!-- Thanh ngang nằm giữa Reality và All Eras -->
+                    <div style="position: relative; width: calc(100% - 16px); height: 1px; margin: 16px auto; background-color: #b4bae9;"></div>
+                    
+          					<div style="position: relative; width: 100%;">
+            						<div style="position: relative; margin-top: 10px; margin-left: 8px; color: #b1b6e0;">All Eras</div>
+                      <div style="height: 70px;"></div>
+          					</div>
+        				</div>
+      			</div>
+    		</div>
+  	</div>
+  	
+  	<!-- Component C (Class) -->
+  	<div class="component-c" id="component-c">
+    		<div class="c-class">
+      			<div class="container-wrapper">
+        				<div class="container">
+          					<div class="menuitem">
+            						<img class="showboats-icon" alt="" src="splus.png" />
+            						<div class="splus">SPlus</div>
+          					</div>
+          					<div class="menuitem1">
+            						<img class="showboats-icon" alt="" src="s-tier.png" />
+            						<div class="splus">S-Tier</div>
+          					</div>
+          					<div class="menuitem3">
+            						<img class="strikers-icon" alt="" src="powerhouses.png" />
+            						<div class="powerhouses">Powerhouses</div>
+          					</div>
+          					<div class="menuitem4">
+            						<img class="strikers-icon" alt="" src="technicians.png" />
+            						<div class="technicians">Technicians</div>
+          					</div>
+          					<div class="menuitem5">
+            						<img class="strikers-icon" alt="" src="tricksters.png" />
+            						<div class="tricksters">Tricksters</div>
+          					</div>
+          					<div class="menuitem2">
+            						<img class="strikers-icon" alt="" src="strikers.png" />
+            						<div class="strikers">Strikers</div>
+          					</div>
+        				</div>
+      			</div>
+      			<div class="separator"></div>
+      			<div class="menuitem-all">All Tiers</div>
+    		</div>
+  	</div>
+  	
+  	<script>
+    		document.addEventListener("DOMContentLoaded", function() {
+      			const classBtn = document.getElementById("class-btn");
+      			const erasBtn = document.getElementById("eras-btn");
+      			const tierBtn = document.getElementById("tier-btn");
+      			
+      			const componentA = document.getElementById("component-a");
+      			const componentB = document.getElementById("component-b");
+      			const componentC = document.getElementById("component-c");
+      			
+      			// Hàm để reset tất cả nút về trạng thái ban đầu
+      			function resetAllButtons() {
+        				// Reset màu nền về màu gốc
+        				classBtn.querySelector('.frame-child').style.backgroundColor = "#33385f";
+        				erasBtn.querySelector('.frame-child').style.backgroundColor = "#33385f";
+        				tierBtn.querySelector('.frame-child').style.backgroundColor = "#33385f";
+        				
+        				// Reset màu text về màu gốc
+        				classBtn.querySelector('.class').style.color = "#99a1c2";
+        				erasBtn.querySelector('.eras-text').style.color = "#99a1c2";
+        				tierBtn.querySelector('.tier-text').style.color = "#99a1c2";
+      			}
+      			
+      			classBtn.addEventListener("click", function() {
+        				resetAllButtons();
+        				componentA.style.display = "none";
+        				componentB.style.display = "none";
+        				componentC.style.display = "block";
+        				
+        				// Thay đổi màu nền của nút Class thành màu giống dropdown (#484e84)
+        				this.querySelector('.frame-child').style.backgroundColor = "#484e84";
+        				// Thay đổi màu text thành xanh
+        				this.querySelector('.class').style.color = "#66d5ff";
+      			});
+      			
+      			erasBtn.addEventListener("click", function() {
+        				resetAllButtons();
+        				componentA.style.display = "none";
+        				componentB.style.display = "block";
+        				componentC.style.display = "none";
+        				
+        				// Thay đổi màu nền của nút Eras thành màu giống dropdown
+        				this.querySelector('.frame-child').style.backgroundColor = "#484e84";
+        				// Thay đổi màu text thành xanh
+        				this.querySelector('.eras-text').style.color = "#66d5ff";
+      			});
+      			
+      			tierBtn.addEventListener("click", function() {
+        				resetAllButtons();
+        				componentA.style.display = "block";
+        				componentB.style.display = "none";
+        				componentC.style.display = "none";
+        				
+        				// Thay đổi màu nền của nút Tier thành màu giống dropdown
+        				this.querySelector('.frame-child').style.backgroundColor = "#484e84";
+        				// Thay đổi màu text thành xanh
+        				this.querySelector('.tier-text').style.color = "#66d5ff";
+      			});
+    		});
+  	</script>
+</body>
+</html>
